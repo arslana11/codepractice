@@ -3,15 +3,22 @@ function saveService(){
     var supplier = document.getElementById('supplier').value;
     var purchasePrice = document.getElementById('purchasePrice').value;
     var sellingPrice = document.getElementById('sellingPrice').value;
-    var profit = document.getElementById('profit').value;
     var serviceType = document.querySelector("input[type='radio'][name=serviceType]:checked").value;
     var service = {
         serviceName: serviceName,
-        supplier: supplier,
+        supplier: supplier, 
         purchasePrice: purchasePrice,
         sellingPrice: sellingPrice,
-        profit: profit,
         serviceType: serviceType
     }
-    console.log(service)
+    
+    console.log(service);
+    
+    // calculating profit
+    if (service.serviceType == 'true') {
+        var profit = (service.purchasePrice * 12 ) - service.sellingPrice;
+    } else {
+        var profit = service.sellingPrice - service.purchasePrice;
+    }
+    document.getElementById('profit').value = profit;
 }
