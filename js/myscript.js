@@ -1,5 +1,8 @@
-var services = [];
+//global variable
+var services = [];   
+
 function saveService() {
+     
     var serviceName = document.getElementById('serviceName').value;
     var supplier = document.getElementById('supplier').value;
     var purchasePrice = document.getElementById('purchasePrice').value;
