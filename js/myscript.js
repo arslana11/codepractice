@@ -30,6 +30,11 @@ function saveService() {
     console.log(services);
 }
 
+function printService() {
+    var firstService = services[0];
+    document.getElementById('txtServiceName').innerHTML = firstService.serviceName;
+}
+
 
 // array operations
 var employess = [
@@ -72,3 +77,13 @@ employess.push(
 employess.map(function(item, index) { 
     console.log(item, index)
 });
+
+// callback function
+// when a thing is completed
+
+var arr = [1,2,3,4,5,6,7,8,9];
+
+function maphandler(item, index) {
+    console.log(item, index)
+}
+arr.map(maphandler)
